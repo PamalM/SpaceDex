@@ -1,0 +1,137 @@
+[
+    {
+        "name": "Mercury",
+        "mass": "3.285x10²³ kg", 
+        "planet Type" : "Terrestrial",
+        "radius" : "1,516 miles",
+        "density" : "5.43 g/cm³",
+        "lengthOfYear" : "88 Earth days", 
+        "lengthOfDay" : "176 Earth days", 
+        "numberOfMoons" : "0",
+        "equatorialIncilination" : "0", 
+        "meanOrbitVelocity" : "105,946 mph", 
+        "averageOrbitDistance" : "35,983,125 miles",
+        "volume" : "14,593,223,446 miles³",
+        "escapeVelocity" : "9,507 mph", 
+        "surfaceGravity" : "3.7 m/s²"
+    },
+
+    {
+        "name": "Venus",
+        "mass": "4.867x10²⁴ kg", 
+        "planet Type" : "Terrestrial",
+        "radius" : "3,760 miles",
+        "density" : "5.24 g/cm³",
+        "lengthOfYear" : "225 Earth days", 
+        "lengthOfDay" : "243 Earth days", 
+        "numberOfMoons" : "0",
+        "equatorialIncilination" : "177.3", 
+        "meanOrbitVelocity" : "78,339 mph", 
+        "averageOrbitDistance" : "67,238,251 miles",
+        "volume" : "222,738,686,740 miles³",
+        "escapeVelocity" : "23,175 mph", 
+        "surfaceGravity" : "8.87 m/s²"
+    },
+
+    {
+        "name": "Earth",
+        "mass": "5.972x10²⁴ kg", 
+        "planet Type" : "Terrestrial",
+        "radius" : "3,959 miles",
+        "density" : "5.513 g/cm³",
+        "lengthOfYear" : "365.25 days", 
+        "lengthOfDay" : "23.9 hours", 
+        "numberOfMoons" : "1",
+        "equatorialIncilination" : "23.4", 
+        "meanOrbitVelocity" : "66,622 mph", 
+        "averageOrbitDistance" : "92,956,050 miles",
+        "volume" : "259,875,159,532 miles³",
+        "escapeVelocity" : "25,031 mph", 
+        "surfaceGravity" : "9.807 m/s²"
+    }, 
+
+    {
+        "name": "Mars",
+        "mass": "6.39x10²³ kg", 
+        "planet Type" : "Terrestrial",
+        "radius" : "2,106 miles",
+        "density" : "3.934 g/cm³",
+        "lengthOfYear" : "687 Earth days", 
+        "lengthOfDay" : "24.6 Earth hours", 
+        "numberOfMoons" : "2",
+        "equatorialIncilination" : "25.2º", 
+        "meanOrbitVelocity" : "53,858 mph", 
+        "averageOrbitDistance" : "141,637,725 miles",
+        "volume" : "39,133,515,914 miles³",
+        "escapeVelocity" : "11,252 mph", 
+        "surfaceGravity" : "3.711 m/s²"
+    },
+    
+    {
+        "name": "Jupiter",
+        "mass": "1.898x10²⁷ kg", 
+        "planet Type" : "Gas Giant",
+        "radius" : "43,440.7 miles",
+        "density" : "1.33 g/cm³",
+        "lengthOfYear" : "11.86 Earth Years", 
+        "lengthOfDay" : "9.93 Earth hours", 
+        "numberOfMoons" : "53",
+        "equatorialIncilination" : "3.1", 
+        "meanOrbitVelocity" : "29,205 mph", 
+        "averageOrbitDistance" : "483,638,564 miles",
+        "volume" : "343,382,767,518,322 miles³",
+        "escapeVelocity" : "134,664 mph", 
+        "surfaceGravity" : "24.79 m/s²"
+    },
+
+    {
+        "name": "Saturn",
+        "mass": "5.683x10²⁶ kg", 
+        "planet Type" : "Gas Giant",
+        "radius" : "36,183.7 miles",
+        "density" : "0.687 g/cm³",
+        "lengthOfYear" : "29 Earth years", 
+        "lengthOfDay" : "10.7 Earth years", 
+        "numberOfMoons" : "53",
+        "equatorialIncilination" : "26.7", 
+        "meanOrbitVelocity" : "21,562 mph", 
+        "averageOrbitDistance" : "886,489,415 miles",
+        "volume" : "198,439,019,647,006 miles³",
+        "escapeVelocity" : "80,731 mph", 
+        "surfaceGravity" : "10.44 m/s²"
+    },
+
+    {
+        "name": "Uranus",
+        "mass": "8.681x10²⁵ kg", 
+        "planet Type" : "Ice Giant",
+        "radius" : "15,759.2 miles",
+        "density" : "1.27 g/cm³",
+        "lengthOfYear" : "17 Earth hours & 14 minutes", 
+        "lengthOfDay" : "84 Earth years", 
+        "numberOfMoons" : "27",
+        "equatorialIncilination" : "97.8", 
+        "meanOrbitVelocity" : "15,209 mph", 
+        "averageOrbitDistance" : "1,783,744,300 miles",
+        "volume" : "31,765 miles³",
+        "escapeVelocity" : "47,826 mph", 
+        "surfaceGravity" : "8.87 m/s²"
+    },
+
+    {
+        "name": "Neptune",
+        "mass": "1.024x10²⁶ kg", 
+        "planet Type" : "Ice Giant",
+        "radius" : "15,299.4 miles",
+        "density" : "1.64 g/cm³",
+        "lengthOfYear" : "165 Earth years", 
+        "lengthOfDay" : "16 Earth hours", 
+        "numberOfMoons" : "14",
+        "equatorialIncilination" : "28.3", 
+        "meanOrbitVelocity" : "12,158 mph", 
+        "averageOrbitDistance" : "2,795,173,960 miles",
+        "volume" : "15,000,714,125,712 miles³",
+        "escapeVelocity" : "52,702 mph", 
+        "surfaceGravity" : "11.15 m/s²"
+    }
+]
