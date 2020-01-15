@@ -1,11 +1,13 @@
 # SpaceDex | PAMAL MANGAT 
 
-Welcome to SpaceDex! 
-This is my first GitHub repo and i'm happy you found it! 
-This is a open-source python 3.8 project for those interested in space. 
-We will work with some data and facts about planets and space, and parsing that data we will create a python script
-that the user can interact with! 
+My First Repo! 
+[Python 3.8]
+> Parsing JSON files using Python. 
 
-We will perform tasks such as JSON parsing (information on the planets in our solar system) and displaying that data either through the console, or a tkinter GUI applciation. This project is still early in the works, so feel free to contribute and suggest ideas! Lets get coding! 
+* Program will parse a .JSON file containing information about planets in our solar system. 
+  User will select/compare planets in our solar system.
+  
+* Program will allow user to get random facts about space. 
+
 
 
