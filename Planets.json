@@ -1,19 +1,20 @@
-[
-       {
-           "name": "Mercury",
-           "mass": "3.285x10²³ kg",
-           "planet Type": "Terrestrial",
-           "radius": "1,516 miles",
-           "density": "5.43 g/cm³",
-           "lengthOfYear": "88 Earth days",
-           "lengthOfDay": "176 Earth days",
-           "numberOfMoons": "0",
-           "equatorialIncilination": "0",
-           "meanOrbitVelocity": "105,946 mph",
-           "averageOrbitDistance": "35,983,125 miles",
-           "volume": "14,593,223,446 miles³",
-           "escapeVelocity": "9,507 mph",
-           "surfaceGravity": "3.7 m/s²"
+{"planets":
+    [
+        {
+            "name": "Mercury",
+            "mass": "3.285x10²³ kg",
+            "planet Type": "Terrestrial",
+            "radius": "1,516 miles",
+            "density": "5.43 g/cm³",
+            "lengthOfYear": "88 Earth days",
+            "lengthOfDay": "176 Earth days",
+            "numberOfMoons": "0",
+            "equatorialIncilination": "0",
+            "meanOrbitVelocity": "105,946 mph",
+            "averageOrbitDistance": "35,983,125 miles",
+            "volume": "14,593,223,446 miles³",
+            "escapeVelocity": "9,507 mph",
+            "surfaceGravity": "3.7 m/s²"
         },
         {
             "name": "Venus",
@@ -112,6 +113,7 @@
             "escapeVelocity" : "47,826 mph",
             "surfaceGravity": "8.87 m/s²"
         },
+
         {
             "name": "Neptune",
             "mass": "1.024x10²⁶ kg",
@@ -128,4 +130,5 @@
             "escapeVelocity": "52,702 mph",
             "surfaceGravity": "11.15 m/s²"
         }
-]
+    ]
+}
