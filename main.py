@@ -1,5 +1,6 @@
 import json
 
+#Class for planets and their attributes/information.
 class Planet:
 
     #Constructor method to initialize attributes.
@@ -18,6 +19,70 @@ class Planet:
         self.volume = volume
         self.escapeVelocity = escapeVelocity
         self.surfaceGravity = surfaceGravity
+
+#Class for terminal commands/prompts for user, etc.
+class Terminal :
+
+    def initialGreeting(self):
+        # Method called to initially prompt user upon first entry to application.
+        print("|---------------------------------------------------------------------------|")
+        print("|                                [SPACEDEX]                                 |")
+        print("|---------------------------------------------------------------------------|")
+        print("|     Welcome to SpaceDex, this is an application created by Pamal Mangat.  |")
+        print("|     This Python script allows you to view information and even compare    |")
+        print("|     planets within our solar system.                                      |")
+        print("|                                                                           |")
+        print("|     The application itself was created using JSON parsing, and a little   |")
+        print("|     bit of magic from python itself and a strong passion for space.       |")
+        print("|                                                                           |")
+        print("|___________________________________________________________________________|\n")
+
+    def menuSelect(self):
+        #Prompt user with menu options and allow them to make a selection.
+        print("|---------------------------------------------------------------------------|")
+        print("|                                 [MENU]                                    |")
+        print("|---------------------------------------------------------------------------|")
+        print("|     Press [1] for specific information about one planet                   |")
+        print("|     Press [2] to compare two planets                                      |")
+        print("|___________________________________________________________________________|\n")
+
+        #Keep prompting user until they enter a valid (1 or 2) input for menu selection.
+        #Return the menuSelection and redirect them according to their selection.
+        while True:
+            try:
+                menuSelection = int(input('Please make Selection: '))
+
+                #Valid menu selection, proceed and exit the loop.
+                if (menuSelection == 1 or menuSelection == 2):
+                    break
+
+                #The input was a valid number, but not one of the specified menu options.
+                else:
+                    print("[Invalid selection]")
+                    continue
+
+            #Invalid selection. (Non-Numerical etc.)
+            except:
+                print("[Invalid selection]")
+
+        #Return user's menu selection back to main.
+        return menuSelection
+
+    def singlePlanetMenu(self):
+        print("|---------------------------------------------------------------------------|")
+        print("|                             [Planet Index]                                |")
+        print("|---------------------------------------------------------------------------|")
+        print("|     Press [1] - Mercury                                                   |")
+        print("|     Press [2] - Venus                                                     |")
+        print("|     Press [3] - Earth                                                     |")
+        print("|     Press [4] - Mars                                                      |")
+        print("|     Press [5] - Jupiter                                                   |")
+        print("|     Press [6] - Saturn                                                    |")
+        print("|     Press [7] - Uranus                                                    |")
+        print("|     Press [8] - Neptune                                                   |")
+        print("|___________________________________________________________________________|\n")
+
+
 
 #Open and parse json data into a python object.
 with open ('SpaceDex/Planets.json') as file:
@@ -70,7 +135,18 @@ Neptune = Planet("Neptune", planets['Neptune'][0], planets['Neptune'][1], planet
                planets['Neptune'][10], planets['Neptune'][11], planets['Neptune'][12])
 
 
+#Initialize object to start running application.
+command = Terminal()
+command.initialGreeting()
 
+#Recieve menu selection from class and determine which submenu to redirect user to.
+menuSelection = command.menuSelect()
+
+if (menuSelection == 1):
+    command.singlePlanetMenu()
+
+else:
+    print('Comapre Planets.')
 
 
 
