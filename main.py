@@ -69,6 +69,7 @@ class Terminal :
         return menuSelection
 
     def singlePlanetMenu(self):
+        #Present user with single planet submenu.
         print("|---------------------------------------------------------------------------|")
         print("|                             [Planet Index]                                |")
         print("|---------------------------------------------------------------------------|")
