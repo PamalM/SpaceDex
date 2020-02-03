@@ -20,6 +20,25 @@ class Planet:
         self.escapeVelocity = escapeVelocity
         self.surfaceGravity = surfaceGravity
 
+    def displayPlanet(self):
+        #Method utilized to display the attributes/stats for one specific planet selected by the user.
+        print("____________________________________________________")
+        print(f"                    [{self.name}]")
+        print(f"Mass: {self.mass}")
+        print(f"Planet Type: {self.planetType}")
+        print(f"Radius: {self.radius}")
+        print(f"Density: {self.density}")
+        print(f"Length of Year: {self.lengthOfYear}")
+        print(f"Length of Day: {self.lengthOfDay}")
+        print(f"Number of moons: {self.numberOfMoons}")
+        print(f"Equatorial Incilination: {self.equatorialIncilination}")
+        print(f"Mean Orbit Velocity: {self.meanOrbitVelocity}")
+        print(f"Average Orbit Distance: {self.averageOrbitDistance}")
+        print(f"Volume: {self.volume}")
+        print(f"Escape Velocity: {self.escapeVelocity}")
+        print(f"Surface Gravity: {self.surfaceGravity}")
+        print("____________________________________________________")
+
 #Class for terminal commands/prompts for user, etc.
 class Terminal :
 
@@ -44,6 +63,7 @@ class Terminal :
         print("|---------------------------------------------------------------------------|")
         print("|     Press [1] for specific information about one planet                   |")
         print("|     Press [2] to compare two planets                                      |")
+        print("|     Press [3] to Exit                                                     |")
         print("|___________________________________________________________________________|\n")
 
         #Keep prompting user until they enter a valid (1 or 2) input for menu selection.
@@ -53,7 +73,7 @@ class Terminal :
                 menuSelection = int(input('Please make Selection: '))
 
                 #Valid menu selection, proceed and exit the loop.
-                if (menuSelection == 1 or menuSelection == 2):
+                if (menuSelection == 1 or menuSelection == 2 or menuSelection == 3):
                     break
 
                 #The input was a valid number, but not one of the specified menu options.
@@ -83,7 +103,26 @@ class Terminal :
         print("|     Press [8] - Neptune                                                   |")
         print("|___________________________________________________________________________|\n")
 
+        #Get user input; Determine to make sure it is valid.
+        while True:
+            try:
+                planetSelection = int(input('Enter Planet: '))
 
+                #Valid menu selection, proceed and exit the loop.
+                if (planetSelection >= 1 and planetSelection <= 8):
+                    break
+
+                #The input was a valid number, but not one of the specified menu options.
+                else:
+                    print("[Invalid selection]")
+                    continue
+
+            #Invalid selection. (Non-Numerical etc.)
+            except:
+                print("[Invalid selection]")
+
+        #Return planet slection back to the main to determine which planet was selection.
+        return planetSelection
 
 #Open and parse json data into a python object.
 with open ('SpaceDex/Planets.json') as file:
@@ -140,14 +179,32 @@ Neptune = Planet("Neptune", planets['Neptune'][0], planets['Neptune'][1], planet
 command = Terminal()
 command.initialGreeting()
 
-#Recieve menu selection from class and determine which submenu to redirect user to.
-menuSelection = command.menuSelect()
+while True:
+    #Recieve menu selection from class and determine which submenu to redirect user to.
+    menuSelection = command.menuSelect()
 
-if (menuSelection == 1):
-    command.singlePlanetMenu()
+    #Dictionary to have a numerical key associated with a specific planet. To eliminate multiple if/else statements.
+    planetIndex = {1:Mercury, 2:Venus, 3:Earth, 4:Mars, 5:Jupiter, 6:Saturn, 7:Uranus, 8:Neptune}
 
-else:
-    print('Comapre Planets.')
+    #User picked to view information/attributes for a specific planet.
+    if (menuSelection == 1):
+
+        #Find the selected planet from the dictionary above and print it's attributes.
+        selectedPlanet = planetIndex.get(command.singlePlanetMenu())
+
+        #Display it's attributes/statistics.
+        selectedPlanet.displayPlanet()
+
+    #User wishes to compare 2 planets from the list.
+    elif (menuSelection ==2):
+        print('Compare Planets.')
+
+    #User wishes to exit the program; Quit the loop.
+    else:
+        print("[Exiting! - Thank You.]")
+        break
+
+
 
 
 
