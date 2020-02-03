@@ -1,10 +1,12 @@
 import json
+from texttable import Texttable
 
 #Class for planets and their attributes/information.
 class Planet:
 
     #Constructor method to initialize attributes.
-    def __init__(self, name, mass, planetType, radius, density, lengthOfYear, lengthOfDay, numberOfMoons, equatorialIncilination, meanOrbitVelocity, averageOrbitDistance, volume, escapeVelocity, surfaceGravity):
+    def __init__(self, name, mass, planetType, radius, density, lengthOfYear,
+                 lengthOfDay, numberOfMoons, equatorialIncilination, meanOrbitVelocity, averageOrbitDistance, volume, escapeVelocity, surfaceGravity):
         self.name = name
         self.mass = mass
         self.planetType = planetType
@@ -20,24 +22,54 @@ class Planet:
         self.escapeVelocity = escapeVelocity
         self.surfaceGravity = surfaceGravity
 
+    def comparePlanets(self, planet2):
+        #Print table displaying both planets attributes side by side.
+        t = Texttable(max_width=140)
+        t.add_row(["Planet:", "", self.name, planet2.name])
+        t.add_row(["Mass:", "", self.mass, planet2.mass])
+        t.add_row(["Radius:", "", self.radius, planet2.radius])
+        t.add_row(["Density:", "", self.density, planet2.density])
+        t.add_row(["Length of Year:", "", self.lengthOfYear, planet2.lengthOfYear])
+        t.add_row(["Length of Day:", "", self.lengthOfDay, planet2.lengthOfDay])
+        t.add_row(["# Moons:", "", self.numberOfMoons, planet2.numberOfMoons])
+        t.add_row(["Equatorial Incinination:", "", self.equatorialIncilination, planet2.equatorialIncilination])
+        t.add_row(["Mean Orbit Velocity:", "", self.meanOrbitVelocity, planet2.meanOrbitVelocity])
+        t.add_row(["Average Orbit Distance:", "", self.averageOrbitDistance, planet2.averageOrbitDistance])
+        t.add_row(["Volume:", "", self.volume, planet2.volume])
+        t.add_row(["Escape Velocity:", "", self.escapeVelocity, planet2.escapeVelocity])
+        t.add_row(["Surface Gravity:", "", self.surfaceGravity, planet2.surfaceGravity])
+        print(t.draw())
+
+        # Compare the two planets on some select attributes.
+        print("____________________________________________________")
+        print(f"[{self.name}]: Larger mass" if (self.mass > planet2.mass) else f"[{planet2.name}]: Larger mass")
+        print(f"[{self.name}]: Larger radius" if (self.radius > planet2.radius) else f"[{planet2.name}]: Larger mass")
+        print(f"[{self.name}]: Larger density" if (self.density > planet2.density) else f"[{planet2.name}]: Larger mass")
+        print(f"[{self.name}]: Larger mean orbit velocity" if (self.meanOrbitVelocity > planet2.meanOrbitVelocity) else f"[{planet2.name}]: Larger mean orbit velocity")
+        print(f"[{self.name}]: Larger average orbit distance" if (self.averageOrbitDistance > planet2.averageOrbitDistance) else f"[{planet2.name}]: Larger average orbit distance")
+        print(f"[{self.name}]: Larger volume" if (self.volume > planet2.volume) else f"[{planet2.name}]: Larger volume")
+        print(f"[{self.name}]: Larger escape velocity" if (self.escapeVelocity > planet2.escapeVelocity) else f"[{planet2.name}]: Larger escape velocity")
+        print(f"[{self.name}]: Larger surface gravity" if (self.surfaceGravity > planet2.surfaceGravity) else f"[{planet2.name}]: Larger surface gravity")
+        print("____________________________________________________")
+
     def displayPlanet(self):
         #Method utilized to display the attributes/stats for one specific planet selected by the user.
-        print("____________________________________________________")
-        print(f"                    [{self.name}]")
-        print(f"Mass: {self.mass}")
-        print(f"Planet Type: {self.planetType}")
-        print(f"Radius: {self.radius}")
-        print(f"Density: {self.density}")
-        print(f"Length of Year: {self.lengthOfYear}")
-        print(f"Length of Day: {self.lengthOfDay}")
-        print(f"Number of moons: {self.numberOfMoons}")
-        print(f"Equatorial Incilination: {self.equatorialIncilination}")
-        print(f"Mean Orbit Velocity: {self.meanOrbitVelocity}")
-        print(f"Average Orbit Distance: {self.averageOrbitDistance}")
-        print(f"Volume: {self.volume}")
-        print(f"Escape Velocity: {self.escapeVelocity}")
-        print(f"Surface Gravity: {self.surfaceGravity}")
-        print("____________________________________________________")
+        t = Texttable(max_width=140)
+        t.add_row(["Planet:", "", self.name])
+        t.add_row(["Mass:", "", self.mass])
+        t.add_row(["Radius:", "", self.radius])
+        t.add_row(["Density:", "", self.density])
+        t.add_row(["Length of Year:", "", self.lengthOfYear])
+        t.add_row(["Length of Day:", "", self.lengthOfDay])
+        t.add_row(["# Moons:", "", self.numberOfMoons])
+        t.add_row(["Equatorial Incinination:", "", self.equatorialIncilination])
+        t.add_row(["Mean Orbit Velocity:", "", self.meanOrbitVelocity])
+        t.add_row(["Average Orbit Distance:", "", self.averageOrbitDistance])
+        t.add_row(["Volume:", "", self.volume])
+        t.add_row(["Escape Velocity:", "", self.escapeVelocity])
+        t.add_row(["Surface Gravity:", "", self.surfaceGravity])
+        print(t.draw())
+
 
 #Class for terminal commands/prompts for user, etc.
 class Terminal :
@@ -124,6 +156,61 @@ class Terminal :
         #Return planet slection back to the main to determine which planet was selection.
         return planetSelection
 
+    def doublePlanetMenu(self):
+        #Present user with double planet menu
+        print("|---------------------------------------------------------------------------|")
+        print("|                             [Planet Index]                                |")
+        print("|---------------------------------------------------------------------------|")
+        print("|     Press [1] - Mercury                                                   |")
+        print("|     Press [2] - Venus                                                     |")
+        print("|     Press [3] - Earth                                                     |")
+        print("|     Press [4] - Mars                                                      |")
+        print("|     Press [5] - Jupiter                                                   |")
+        print("|     Press [6] - Saturn                                                    |")
+        print("|     Press [7] - Uranus                                                    |")
+        print("|     Press [8] - Neptune                                                   |")
+        print("|___________________________________________________________________________|\n")
+
+        #Get user input; Determine to make sure it is valid.
+        while True:
+            try:
+                planetSelection = int(input('Select Planet 1: '))
+
+                #Valid menu selection, proceed and exit the loop.
+                if (planetSelection >= 1 and planetSelection <= 8):
+                    break
+
+                #The input was a valid number, but not one of the specified menu options.
+                else:
+                    print("[Invalid selection]")
+                    continue
+
+            #Invalid selection. (Non-Numerical etc.)
+            except:
+                print("[Invalid selection]")
+
+        while True:
+            try:
+                planetSelection2 = int(input('Select planet 2:'))
+
+                if (planetSelection2 >= 1 and planetSelection2 <= 8 and planetSelection2 != planetSelection):
+                    break;
+
+                elif (planetSelection2 == planetSelection):
+                    print("[Can't compare the same planets]")
+                    continue
+
+                else:
+                    print("[Invalid selection]")
+                    continue
+
+            except:
+                print("[Invalid selection]")
+
+
+        #Return planet slection back to the main to determine which planet was selection.
+        return planetSelection, planetSelection2
+
 #Open and parse json data into a python object.
 with open ('SpaceDex/Planets.json') as file:
     read = json.load(file)
@@ -197,7 +284,16 @@ while True:
 
     #User wishes to compare 2 planets from the list.
     elif (menuSelection ==2):
-        print('Compare Planets.')
+
+        #Method returns 2 values, = 2 planets (Planet1, Planet2)
+        planet = command.doublePlanetMenu()
+
+        #Match the return values with a planet within the list.
+        planet1 = planetIndex.get(planet[0])
+        planet2 = planetIndex.get(planet[1])
+
+        #Display and compare the planets attributes.
+        planet1.comparePlanets(planet2)
 
     #User wishes to exit the program; Quit the loop.
     else:
